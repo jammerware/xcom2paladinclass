@@ -1,0 +1,37 @@
++[Paladin X2SoldierClassTemplate]
++DisplayName="Paladin"
++ClassSummary="The Paladin is a deadly midrange operative capable of dispensing bullets, grenades, and psi attacks with equal facility."
++LeftAbilityTreeTitle="Duelist"
++RightAbilityTreeTitle="Firebrand"
++AbilityTreeTitles[0]="Duelist"
++AbilityTreeTitles[1]="Firebrand"
++AbilityTreeTitles[2]="XCOM"
+
+; NICKS
++RandomNickNames[0]="Lightbringer"
++RandomNickNames[1]="Wendigo"
++RandomNickNames[2]="Ziz"
+
+;ALPHABETICAL ORDER
++RandomNickNames_Male[0]="Adaro"
++RandomNickNames_Male[1]="Deus"
++RandomNickNames_Male[2]="Fenrus"
++RandomNickNames_Male[3]="Pax"
++RandomNickNames_Male[4]="Roc"
+;ALPHABETICAL ORDER
++RandomNickNames_Female[0]="Akka"
++RandomNickNames_Female[1]="Kami"
++RandomNicknames_Female[2]="Lux"
++RandomNicknames_Female[3]="Naga"
++RandomNicknames_Female[4]="Gray Lady"
+;ALPHABETICAL ORDER
++PhotoboothSoloBLines_Male[0]="Bullets. Bombs. Blasts. BUSTED."
++PhotoboothSoloBLines_Female[0]="Bullets. Bombs. Blasts. BUSTED."
+
+; ABILITIES
+[Battlefury X2AbilityTemplate]
+LocFriendlyName="Battlefury"
+LocLongDescription="Using a Psi ability with your first action no longer ends your turn, but you can use only one such ability each turn."
+LocHelpText="Using a Psi ability with your first action no longer ends your turn, but you can use only one such ability each turn."
+LocFlyOverText="Battlefury"
+LocPromotionPopupText="Battlefury allows Paladins to incorporate multiple types of attack into a single turn."

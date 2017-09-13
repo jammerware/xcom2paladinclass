@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Default" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Guid>e2bd3c33-9922-4d25-9a01-a6e71ae569cf</Guid>
+    <Name>PaladinClass</Name>
+    <Description>This mod adds the Paladin class to XCOM 2: War of the Chosen.</Description>
+    <SteamPublishID>0</SteamPublishID>
+    <AssemblyName>PaladinClass</AssemblyName>
+    <RootNamespace>PaladinClass</RootNamespace>
+    <ProjectGuid>{a320e7bd-3f61-4667-bafa-9c7203e8957b}</ProjectGuid>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Config" />
+    <Folder Include="Localization" />
+    <Folder Include="Src" />
+    <Folder Include="Src\PaladinClass" />
+    <Folder Include="Src\PaladinClass\Classes" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config\XComClassData.ini">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Config\XComEditor.ini">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Config\XComEngine.ini">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Config\XComGame.ini">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Config\XComGameData.ini">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Config\XComPaladinClass.ini">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Localization\XComGame.int">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\PaladinClass\Classes\X2Ability_PaladinAbilitySet.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\PaladinClass\Classes\X2DownloadableContentInfo_PaladinClass.uc">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildLocalExtensionPath)\XCOM2.targets" />
+</Project>
