@@ -13,7 +13,7 @@ static function array <X2DataTemplate> CreateTemplates()
 	Templates.Length = 0;
 
 	// SQUADDIE!
-	Templates.AddItem(PurePassive(default.BattlefuryAbilityName, "img:///UILibrary_Common.class_ranger"));
+	Templates.AddItem(PurePassive(default.BattlefuryAbilityName));
 
 	`LOG("Paladin Class: Creating templates - " @ string(Templates.Length));
 	return Templates;

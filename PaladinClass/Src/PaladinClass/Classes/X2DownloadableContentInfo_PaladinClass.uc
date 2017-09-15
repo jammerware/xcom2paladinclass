@@ -40,7 +40,7 @@ static function ApplyBattlefuryToAbility(name abilityName)
 	local int i;
 	
 	AbilityTemplate = class'X2AbilityTemplateManager'.static.GetAbilityTemplateManager().FindAbilityTemplate(abilityName);
-	`LOG("Battlefurying " @ string(abilityName));
+	`LOG("PaladinClass: Battlefurying " @ string(abilityName));
 
 	// Find the action point cost. It's not always the first item, so find it in the list
 	for (i = 0; i < AbilityTemplate.AbilityCosts.Length; i++)
@@ -52,7 +52,7 @@ static function ApplyBattlefuryToAbility(name abilityName)
 
 	if (ActionPointCost == none)
 	{
-		`LOG("Paladin Class: Failed to apply Battlefury to ability template " @ string(abilityName) @ " (missing action point cost).");
+		`LOG("PaladinClass: Failed to apply Battlefury to ability template " @ string(abilityName) @ " (missing action point cost).");
 		return;
 	}
 
