@@ -48,7 +48,7 @@ static function X2DataTemplate CreateTemplate_HolyBlade_Conventional()
 	Template.StowedLocation = eSlot_RightBack;
 
 	// This all the resources; sounds, animations, models, physics, the works.
-	// TODO: custom sweet resources?
+	// TODO: sweet custom resources?
 	Template.GameArchetype = "WP_Sword_CV.WP_Sword_CV";
 	Template.AddDefaultAttachment('Sheath', "ConvSword.Meshes.SM_ConvSword_Sheath", true);
 	Template.Tier = 0;
@@ -67,9 +67,6 @@ static function X2DataTemplate CreateTemplate_HolyBlade_Conventional()
 	Template.BaseDamage.DamageType = 'Melee';
 	Template.DamageTypeTemplateName = 'Melee';
 
-	`LOG("PaladinClass: Base damage: " @ string(default.HOLYBLADE_CONVENTIONAL_BASEDAMAGE.Damage) @ ".");
-	`LOG("PaladinClass: Aim: " @ string(default.HOLYBLADE_CONVENTIONAL_AIM) @ ".");
-	
 	Template.StartingItem = true;
 	Template.CanBeBuilt = false;
 	Template.bInfiniteItem = true;

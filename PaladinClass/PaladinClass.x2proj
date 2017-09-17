@@ -41,6 +41,9 @@
     <Content Include="Localization\XComGame.int">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="Src\PaladinClass\Classes\X2AbilityTarget_HolyStrike.uc">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Src\PaladinClass\Classes\X2Ability_PaladinAbilitySet.uc">
       <SubType>Content</SubType>
     </Content>
