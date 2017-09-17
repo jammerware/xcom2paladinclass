@@ -24,8 +24,10 @@ static function array <X2DataTemplate> CreateTemplates()
 static function X2AbilityTemplate AddHolyStrike(optional name AbilityName = default.HolyStrikeAbilityName)
 {
 	local X2AbilityTemplate Template;
+	local X2AbilityCooldown	Cooldown;
 	local X2AbilityCost_ActionPoints ActionPointCost;
 	local X2AbilityToHitCalc_StandardMelee StandardMelee;
+	local X2AbilityTarget_MovingMelee MeleeTarget;
 	local X2Effect_ApplyWeaponDamage WeaponDamageEffect;
 	local array<name> SkipExclusions;
 
@@ -42,19 +44,31 @@ static function X2AbilityTemplate AddHolyStrike(optional name AbilityName = defa
 	Template.ShotHUDPriority = class'UIUtilities_Tactical'.const.CLASS_SQUADDIE_PRIORITY;
 	Template.AbilityConfirmSound = "TacticalUI_SwordConfirm";
 
+	// cooldown
+	Cooldown = new class'X2AbilityCooldown';
+	Cooldown.iNumTurns = 1;
+	Template.AbilityCooldown = Cooldown;
+
 	ActionPointCost = new class'X2AbilityCost_ActionPoints';
-	ActionPointCost.iNumPoints = 1;
 	ActionPointCost.bConsumeAllPoints = false;
+	ActionPointCost.bMoveCost = true;
 	Template.AbilityCosts.AddItem(ActionPointCost);
 	
 	StandardMelee = new class'X2AbilityToHitCalc_StandardMelee';
 	Template.AbilityToHitCalc = StandardMelee;
 
-	Template.AbilityTargetStyle = new class'X2AbilityTarget_MovingMelee';
-	Template.TargetingMethod = class'X2TargetingMethod_HolyStrike';
+	// holy strike can only be used over blue-move range
+	MeleeTarget = new class'X2AbilityTarget_MovingMelee';
+	MeleeTarget.MovementRangeAdjustment = 1;
+	Template.AbilityTargetStyle = MeleeTarget;
+
+	Template.TargetingMethod = class'X2TargetingMethod_MeleePath';
+	//Template.TargetingMethod = class'X2TargetingMethod_HolyStrike';
 
 	Template.AbilityTriggers.AddItem(default.PlayerInputTrigger);
-	Template.AbilityTriggers.AddItem(new class'X2AbilityTrigger_EndOfMove');
+
+	// pulling for now - i think this is here to allow bladestorm/reaper stuff, but we're not doing that
+	//Template.AbilityTriggers.AddItem(new class'X2AbilityTrigger_EndOfMove');
 
 	// Target Conditions
 	Template.AbilityTargetConditions.AddItem(default.LivingHostileTargetProperty);
@@ -66,7 +80,6 @@ static function X2AbilityTemplate AddHolyStrike(optional name AbilityName = defa
 	Template.AddShooterEffectExclusions(SkipExclusions);
 
 	// Damage Effect
-	//
 	WeaponDamageEffect = new class'X2Effect_ApplyWeaponDamage';
 	Template.AddTargetEffect(WeaponDamageEffect);
 
@@ -74,7 +87,6 @@ static function X2AbilityTemplate AddHolyStrike(optional name AbilityName = defa
 	Template.bSkipMoveStop = true;
 	
 	// Voice events
-	//
 	Template.SourceMissSpeech = 'SwordMiss';
 
 	Template.SuperConcealmentLoss = class'X2AbilityTemplateManager'.default.SuperConcealmentStandardShotLoss;

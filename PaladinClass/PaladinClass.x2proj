@@ -50,9 +50,6 @@
     <Content Include="Src\PaladinClass\Classes\X2Item_HolyBlade.uc">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="Src\PaladinClass\Classes\X2TargetingMethod_HolyStrike.uc">
-      <SubType>Content</SubType>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildLocalExtensionPath)\XCOM2.targets" />
 </Project>

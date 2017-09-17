@@ -1,4 +1,4 @@
-class X2Item_HolyBlade extends X2Item config(PaladinClass);
+class X2Item_HolyBlade extends X2Item config(GameData_WeaponData);
 
 var config WeaponDamageValue HOLYBLADE_CONVENTIONAL_BASEDAMAGE;
 //var config WeaponDamageValue HOLYBLADE_MAGNETIC_BASEDAMAGE;
@@ -36,7 +36,6 @@ static function X2DataTemplate CreateTemplate_HolyBlade_Conventional()
 {
 	local X2WeaponTemplate Template;
 
-	`LOG("PaladinClass: Creating Holy Blade template...");
 	`CREATE_X2TEMPLATE(class'X2WeaponTemplate', Template, 'HolyBlade');
 	Template.WeaponPanelImage = "_Sword";                       // used by the UI. Probably determines iconview of the weapon.
 
@@ -66,12 +65,14 @@ static function X2DataTemplate CreateTemplate_HolyBlade_Conventional()
 	Template.iSoundRange = default.HOLYBLADE_CONVENTIONAL_ISOUNDRANGE;
 	Template.iEnvironmentDamage = default.HOLYBLADE_CONVENTIONAL_IENVIRONMENTDAMAGE;
 	Template.BaseDamage.DamageType = 'Melee';
+	Template.DamageTypeTemplateName = 'Melee';
+
+	`LOG("PaladinClass: Base damage: " @ string(default.HOLYBLADE_CONVENTIONAL_BASEDAMAGE.Damage) @ ".");
+	`LOG("PaladinClass: Aim: " @ string(default.HOLYBLADE_CONVENTIONAL_AIM) @ ".");
 	
 	Template.StartingItem = true;
 	Template.CanBeBuilt = false;
 	Template.bInfiniteItem = true;
-
-	Template.DamageTypeTemplateName = 'Melee';
 
 	`LOG("PaladinClass: Holy Blade template created.");
 
